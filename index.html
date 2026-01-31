@@ -1,157 +1,658 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammed Farhan | Cybersecurity Professional</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Farhan | Cybersecurity Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-body{
-    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-    background:#0a0e27;
-    color:#e0e0e0;
-    line-height:1.6;
-    overflow-x:hidden;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+        /* Header & Navigation */
+        header {
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.1);
+        }
 
-header{
-    background:rgba(10,14,39,.95);
-    backdrop-filter:blur(10px);
-    position:fixed;width:100%;top:0;z-index:1000;
-    border-bottom:1px solid rgba(0,255,157,.1);
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
 
-nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2rem;}
-.logo{
-    font-size:1.5rem;font-weight:bold;
-    background:linear-gradient(135deg,#00ff9d,#00b8ff);
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00ff9d, #00b8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-nav ul{display:flex;list-style:none;gap:2rem;}
-nav a{color:#e0e0e0;text-decoration:none;font-weight:500;}
-nav a:hover{color:#00ff9d;}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-.hero{
-    height:100vh;display:flex;align-items:center;justify-content:center;
-    text-align:center;position:relative;overflow:hidden;
-}
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
 
-.hero-content{z-index:10;animation:fadeInUp 1s ease-out;}
+        nav a:hover {
+            color: #00ff9d;
+        }
 
-.profile-pic{
-    width:180px;height:180px;border-radius:50%;
-    margin:0 auto 2rem;
-    border:4px solid #00ff9d;
-    box-shadow:0 0 30px rgba(0,255,157,.4);
-    object-fit:cover;
-}
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-.hero h1{
-    font-size:4rem;margin-bottom:1rem;
-    background:linear-gradient(135deg,#00ff9d,#00b8ff);
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
+        .hero-content {
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
 
-.subtitle{font-size:1.5rem;color:#a0a0a0;margin-bottom:1rem;}
-.tagline{font-size:1.1rem;color:#00ff9d;margin-bottom:2rem;}
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 4px solid #00ff9d;
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.4);
+            object-fit: cover;
+            animation: fadeInUp 1s ease-out;
+            display: block;
+        }
 
-.cta-buttons{display:flex;gap:1rem;justify-content:center;margin-top:2rem;}
-.btn{padding:1rem 2rem;border-radius:5px;text-decoration:none;font-weight:bold;}
-.btn-primary{background:linear-gradient(135deg,#00ff9d,#00b8ff);color:#0a0e27;}
-.btn-secondary{background:transparent;color:#00ff9d;border:2px solid #00ff9d;}
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00ff9d, #00b8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-section{padding:6rem 2rem;}
-.section-title{
-    font-size:2.5rem;text-align:center;margin-bottom:3rem;
-    background:linear-gradient(135deg,#00ff9d,#00b8ff);
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-}
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
 
-@keyframes fadeInUp{
-    from{opacity:0;transform:translateY(30px);}
-    to{opacity:1;transform:translateY(0);}
-}
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #00ff9d;
+            margin-bottom: 2rem;
+        }
 
-@media(max-width:768px){
-    .hero h1{font-size:2.5rem;}
-    .cta-buttons{flex-direction:column;}
-}
-</style>
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ff9d, #00b8ff);
+            color: #0a0e27;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00ff9d;
+            border: 2px solid #00ff9d;
+        }
+
+        .btn-secondary:hover {
+            background: #00ff9d;
+            color: #0a0e27;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #00ff9d, #00b8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(0, 255, 157, 0.05);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: #00ff9d;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #a0a0a0;
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(0, 255, 157, 0.05);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff9d;
+            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.2);
+        }
+
+        .skill-card h3 {
+            color: #00ff9d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            padding: 0.5rem 0;
+            color: #c0c0c0;
+        }
+
+        .skill-card li:before {
+            content: "▹ ";
+            color: #00ff9d;
+            font-weight: bold;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(0, 255, 157, 0.05);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff9d;
+            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.2);
+        }
+
+        .project-card h3 {
+            color: #00ff9d;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .project-type {
+            color: #00b8ff;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #c0c0c0;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Experience & Certifications */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: rgba(0, 255, 157, 0.05);
+            border-left: 3px solid #00ff9d;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .timeline-item h3 {
+            color: #00ff9d;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .company {
+            color: #00b8ff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .date {
+            color: #808080;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            margin-left: 1.5rem;
+        }
+
+        .timeline-item li {
+            color: #c0c0c0;
+            margin: 0.5rem 0;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00ff9d;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+            color: #00b8ff;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 255, 157, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-animation span {
+            position: absolute;
+            display: block;
+            width: 2px;
+            height: 2px;
+            background: #00ff9d;
+            animation: float 15s infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-100px) translateX(100px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="bg-animation" id="bgAnimation"></div>
 
-<header>
-<nav>
-<div class="logo">MF.CYRSEC</div>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</header>
+    <header>
+        <nav>
+            <div class="logo">MF.CYRSEC</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="hero">
-<div class="hero-content">
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://raw.githubusercontent.com/7H3CYF4RX/Farhuzeee/main/IMG_20250801_194540_326.jpg" alt="Muhammed Farhan" class="profile-pic">
+            <h1>Muhammed Farhan A</h1>
+            <p class="subtitle">Cybersecurity Professional</p>
+            <p class="tagline">Certified Ethical Hacker | Penetration Tester | Security Researcher</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="https://www.linkedin.com/in/muhammed-farhan-cysec" class="btn btn-secondary" target="_blank">LinkedIn Profile</a>
+            </div>
+        </div>
+    </section>
 
-<!-- YOUR IMAGE ADDED HERE -->
-<img class="profile-pic"
-src="https://raw.githubusercontent.com/7H3CYF4RX/Farhuzeee/main/IMG_20250801_194540_326.jpg"
-alt="Muhammed Farhan">
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate Cybersecurity Professional with expertise in offensive security, penetration testing, and vulnerability assessment. With hands-on experience in VAPT and a proven track record of developing innovative security tools, I specialize in identifying and exploiting vulnerabilities to help organizations strengthen their security posture.</p>
+                    <br>
+                    <p>My approach combines technical expertise with creative problem-solving, allowing me to uncover complex security issues and develop automated solutions for efficient security testing workflows.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Security Tools Developed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">CEH</div>
+                        <div class="stat-label">Certified Ethical Hacker</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">VAPT</div>
+                        <div class="stat-label">Intern Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">API</div>
+                        <div class="stat-label">Security Certified</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h1>Muhammed Farhan A</h1>
-<p class="subtitle">Cybersecurity Professional</p>
-<p class="tagline">Certified Ethical Hacker | Penetration Tester | Security Researcher</p>
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Security Testing</h3>
+                    <ul>
+                        <li>Offensive Security</li>
+                        <li>Penetration Testing</li>
+                        <li>Web App Security</li>
+                        <li>Mobile Security</li>
+                        <li>Bug Bounty Hunting</li>
+                        <li>OSINT</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Security Tools</h3>
+                    <ul>
+                        <li>Burp Suite & OWASP ZAP</li>
+                        <li>Nmap, Masscan, Nuclei</li>
+                        <li>Metasploit Framework</li>
+                        <li>SQLMap & XSStrike</li>
+                        <li>Subfinder & Amass</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Development</h3>
+                    <ul>
+                        <li>Security Tool Creation</li>
+                        <li>AI-Assisted Development</li>
+                        <li>Automation Scripts</li>
+                        <li>Chrome Extensions</li>
+                        <li>Workflow Optimization</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Research Areas</h3>
+                    <ul>
+                        <li>Vulnerability Research</li>
+                        <li>Red Team Operations</li>
+                        <li>Exploit Development</li>
+                        <li>Threat Hunting</li>
+                        <li>Dark Web Research</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="cta-buttons">
-<a href="#contact" class="btn btn-primary">Get In Touch</a>
-<a href="https://www.linkedin.com/in/muhammed-farhan-cysec" class="btn btn-secondary" target="_blank">LinkedIn</a>
-</div>
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Security Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>EchoPlus</h3>
+                    <div class="project-type">Chrome DevTools Security Extension</div>
+                    <p class="project-description">A powerful browser extension inspired by Burp Suite, featuring Repeater, Intruder, Scanner, and Response Manipulation capabilities - all supercharged with AI for modern security testing.</p>
+                </div>
+                <div class="project-card">
+                    <h3>CrawlX</h3>
+                    <div class="project-type">Subdomain Enumeration Tool</div>
+                    <p class="project-description">Advanced subdomain enumeration and URL discovery tool leveraging asynchronous crawling for high-performance reconnaissance across large attack surfaces.</p>
+                </div>
+                <div class="project-card">
+                    <h3>PARA-HAWK</h3>
+                    <div class="project-type">Parameter Discovery Crawler</div>
+                    <p class="project-description">Multi-threaded crawler designed for discovering GET parameters in web applications, enabling comprehensive attack surface mapping and potential entry point identification.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Subber</h3>
+                    <div class="project-type">Subdomain Takeover Scanner</div>
+                    <p class="project-description">Automated tool for detecting subdomain takeover vulnerabilities across DNS records, helping identify and prevent potential subdomain hijacking attacks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
-</section>
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Certifications</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>VAPT Intern</h3>
+                    <div class="company">Cybercrews Security Labs</div>
+                    <div class="date">2025 – Present</div>
+                    <ul>
+                        <li>Conducted comprehensive penetration testing on web applications</li>
+                        <li>Performed vulnerability assessments including OWASP Top 10 testing</li>
+                        <li>Documented security findings with detailed technical reports</li>
+                        <li>Collaborated with development teams for vulnerability remediation</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Certified Ethical Hacker (CEH) V13</h3>
+                    <div class="company">EC-Council</div>
+                    <div class="date">January 2026 | Cert: ECC7015864392</div>
+                </div>
+                <div class="timeline-item">
+                    <h3>Certified Red Team Analyst (CRTA)</h3>
+                    <div class="company">Cyberwarfare Labs</div>
+                    <div class="date">In Progress - 2025</div>
+                </div>
+                <div class="timeline-item">
+                    <h3>API Security & Penetration Testing</h3>
+                    <div class="company">APISec University</div>
+                    <div class="date">June - July 2025</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="about">
-<div class="container">
-<h2 class="section-title">About Me</h2>
-<p style="text-align:center;font-size:1.1rem;max-width:800px;margin:auto;">
-Passionate offensive security professional focused on penetration testing,
-bug bounty hunting and building powerful security tools and automation.
-</p>
-</div>
-</section>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Interested in collaboration or have a security project in mind? Let's connect!</p>
+                <div class="contact-links">
+                    <a href="mailto:farhuzeee@gmail.com" class="contact-link">
+                        <span>📧</span> farhuzeee@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/muhammed-farhan-cysec" class="contact-link" target="_blank">
+                        <span>💼</span> LinkedIn
+                    </a>
+                    <a href="https://github.com/7H3CYF4RX" class="contact-link" target="_blank">
+                        <span>💻</span> GitHub
+                    </a>
+                    <a href="tel:+918157929896" class="contact-link">
+                        <span>📱</span> +91 8157929896
+                    </a>
+                </div>
+                <p style="margin-top: 2rem; color: #808080;">📍 Karunagappally, Kerala, India</p>
+            </div>
+        </div>
+    </section>
 
-<section id="skills">
-<div class="container">
-<h2 class="section-title">Technical Arsenal</h2>
-<p style="text-align:center;">Web Security • VAPT • Bug Bounty • OSINT • Tool Development</p>
-</div>
-</section>
+    <footer>
+        <p>&copy; 2026 Muhammed Farhan A. Cybersecurity Professional.</p>
+    </footer>
 
-<section id="projects">
-<div class="container">
-<h2 class="section-title">Security Projects</h2>
-<p style="text-align:center;">EchoPlus • CrawlX • PARA-HAWK • Subber</p>
-</div>
-</section>
+    <script>
+        // Animated background
+        const bgAnimation = document.getElementById('bgAnimation');
+        for (let i = 0; i < 50; i++) {
+            const span = document.createElement('span');
+            span.style.left = Math.random() * 100 + '%';
+            span.style.top = Math.random() * 100 + '%';
+            span.style.animationDelay = Math.random() * 15 + 's';
+            span.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            bgAnimation.appendChild(span);
+        }
 
-<section id="contact">
-<div class="container">
-<h2 class="section-title">Get In Touch</h2>
-<p style="text-align:center;font-size:1.2rem;">
-📧 farhuzeee@gmail.com<br>
-💻 github.com/7H3CYF4RX<br>
-💼 LinkedIn /muhammed-farhan-cysec
-</p>
-</div>
-</section>
-
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
